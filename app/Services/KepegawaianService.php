@@ -9,8 +9,8 @@ class KepegawaianService {
     private $apiAuth;
 
     function __construct($data = []) {
-        $this->apiUrl  = config('services.service_simpeg_v2.url', '');
-        $this->apiAuth = config('services.service_simpeg_v2.secret', '');
+        $this->apiUrl  = config('services.service_simpeg_v2.url', 'https://kepegawaian.ummetro.ac.id/ws/');
+        $this->apiAuth = config('services.service_simpeg_v2.secret', 'iJh80U45Qc5g4D3E16Iu8YmoMQkVflcFoHsWor18bf70db89');
     }
 
     public function get($route, $data = [])
