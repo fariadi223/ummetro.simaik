@@ -9,8 +9,8 @@ class KepegawaianService {
     private $apiAuth;
 
     function __construct($data = []) {
-        $this->apiUrl  = env('API_SIMPEG_V2_URL', '');
-        $this->apiAuth = env('API_SIMPEG_V2_SECRET', '');
+        $this->apiUrl  = config('services.service_simpeg_v2.url', '');
+        $this->apiAuth = config('services.service_simpeg_v2.secret', '');
     }
 
     public function get($route, $data = [])

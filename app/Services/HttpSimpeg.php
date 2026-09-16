@@ -10,8 +10,8 @@ class HttpSimpeg {
     public  $apiAuth;
 
     function __construct() {
-      $this->secret   = env('API_SIMPEG_SECRET','Univ%Muh%Metr0+');
-      $this->apiUrl   = env('API_SIMPEG_URL', 'https://simpeg.ummetro.ac.id/');
+      $this->secret   = config('services.service_simpeg.secret', 'Univ%Muh%Metr0+');
+      $this->apiUrl   = config('services.service_simpeg.url', 'https://simpeg.ummetro.ac.id/');
     }
 
     public function request($method, $route, $data = []) 

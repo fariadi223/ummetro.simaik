@@ -35,5 +35,15 @@ return [
         'client_secret' => env('GOOGLE_CLIENT_SECRET'),
         'redirect' => env('GOOGLE_REDIRECT_URL'),
     ],
+    'service_simpeg' => [
+        'url' => env('API_SIMPEG_URL'),
+        'secret' => env('API_SIMPEG_SECRET'),
+    ],
+    'service_simpeg_v2' => [
+        'url' => env('API_SIMPEG_V2_URL'),
+        'secret' => env('API_SIMPEG_V2_SECRET'),
+    ],
+
+
 
 ];
