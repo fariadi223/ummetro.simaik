@@ -2,7 +2,6 @@
 /public/hot
 /public/storage
 /bootstrap/cache/*
-/storage/app/public/*
 /database/*.sqlite
 /storage/*.key
 /vendor
