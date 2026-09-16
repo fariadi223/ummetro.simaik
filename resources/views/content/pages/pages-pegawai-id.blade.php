@@ -173,16 +173,16 @@ $profil  = ($pegawai) ? $usersRepository->getByID($sdmRow->id) : false;
                 <dt class="col-sm-3">Nama Ranting</dt>
                 <dd class="col-sm-9">
                   @php 
-                    $rantingKel = ($pegawai->ranting_desa_kel) ? $pegawai->ranting_desa_kel : '';
-                    $rantingKec = ($pegawai->rantingKec) ? $pegawai->rantingKec->nama : '';
-                    $rantingKab = ($pegawai->rantingKab) ? $pegawai->rantingKab->nama : '';
+                    $rantingKel = $pegawai?->ranting_desa_kel ?? '';
+                    $rantingKec = $pegawai?->rantingKec?->nama ?? '';
+                    $rantingKab = $pegawai?->rantingKab?->nama ?? '';
                   @endphp
-                  {{ ($pegawai->ranting_tingkat === 'ranting') ? strtoupper($pegawai->ranting_tingkat . ' '. $rantingKel) : '' }}
-                  {{ ($pegawai->ranting_tingkat === 'cabang') ? strtoupper($pegawai->ranting_tingkat . ' '. $rantingKec) : '' }}
-                  {{ ($pegawai->ranting_tingkat === 'daerah') ? strtoupper($pegawai->ranting_tingkat . ' '. $rantingKab) : '' }}
+                  {{ ($pegawai?->ranting_tingkat === 'ranting') ? strtoupper($pegawai->ranting_tingkat . ' '. $rantingKel) : '' }}
+                  {{ ($pegawai?->ranting_tingkat === 'cabang') ? strtoupper($pegawai->ranting_tingkat . ' '. $rantingKec) : '' }}
+                  {{ ($pegawai?->ranting_tingkat === 'daerah') ? strtoupper($pegawai->ranting_tingkat . ' '. $rantingKab) : '' }}
                 </dd>
                 <dt class="col-sm-3">Tingkat</dt>
-                <dd class="col-sm-9">{{ ($pegawai && $pegawai->ranting_tingkat) ? strtoupper($pegawai->ranting_tingkat) : 'Tidak ada' }}</dd>
+                <dd class="col-sm-9">{{ ($pegawai?->ranting_tingkat) ? strtoupper($pegawai->ranting_tingkat) : 'Tidak ada' }}</dd>
 
                 <dt class="col-sm-3">Provinsi</dt>
                 <dd class="col-sm-9">{{ ($pegawai && $pegawai->rantingProv) ? $pegawai->rantingProv->nama : '-' }}</dd>
